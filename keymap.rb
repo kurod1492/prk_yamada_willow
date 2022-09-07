@@ -30,6 +30,18 @@ KC_3   KC_2   KC_1 KC_MINUS
        KC_DOT KC_0
 )
 
+kbd.add_layer :lower, %i(
+KC_TILD KC_F11 KC_F12 KC_F3   KC_F4   KC_F5                  KC_F6    KC_F7   KC_F8    KC_F9    KC_F10    KC_BSLS
+KC_TAB  KC_Q   KC_W   KC_E    KC_R    KC_T                   KC_Y     KC_U    KC_I     KC_O     KC_P      KC_EQLS
+KC_LCTL KC_A   KC_S   KC_D    KC_F    KC_G                   KC_LEFT  KC_DOWN KC_UP    KC_RIGHT KC_SCOLON KC_EQLS
+KC_LSFT KC_Z   KC_X   KC_C    KC_V    KC_B  KC_RBRC KC_B     KC_N     KC_M    KC_COMMA KC_DOT   KC_SLASH  KC_RSFT
+                      KC_LGUI KC_LALT LOWER KC_SPC  KC_LEFT  KC_DOWN KC_UP KC_RIGHT
+KC_9   KC_8   KC_7
+KC_6   KC_5   KC_4 KC_PLUS
+KC_3   KC_2   KC_1 KC_MINUS
+       KC_DOT KC_0
+)
+
 kbd.add_layer :raise, %i(
 KC_GRAVE KC_F1 KC_F2 KC_F3   KC_F4   KC_F5                  KC_F6    KC_F7   KC_F8    KC_F9    KC_F10    KC_BSLS
 KC_TAB   KC_Q  KC_W  KC_E    KC_R    KC_T                   KC_Y     KC_U    KC_I     KC_O     KC_P      KC_EQLS
@@ -42,19 +54,7 @@ KC_3   KC_2   KC_1 KC_MINUS
        KC_DOT KC_0
 )
 
-kbd.add_layer :lower, %i(
-KC_TILD KC_F11 KC_F12 KC_F3   KC_F4   KC_F5                  KC_F6    KC_F7   KC_F8    KC_F9    KC_F10    KC_PIPE
-KC_TAB  KC_Q   KC_W   KC_E    KC_R    KC_T                   KC_Y     KC_U    KC_I     KC_O     KC_P      KC_PLUS
-KC_LCTL KC_A   KC_S   KC_D    KC_F    KC_G                   KC_LEFT  KC_DOWN KC_UP    KC_RIGHT KC_SCOLON KC_EQLS
-KC_LSFT KC_Z   KC_X   KC_C    KC_V    KC_B   KC_LBRC KC_RBRC KC_N     KC_M    KC_COMMA KC_DOT   KC_SLASH  KC_RSFT
-                      KC_LGUI KC_LALT KC_SPC LOWER   RAISE   KC_ENTER KC_RSFT KC_RCTL
-KC_9   KC_8   KC_7
-KC_6   KC_5   KC_4 KC_PLUS
-KC_3   KC_2   KC_1 KC_MINUS
-       KC_DOT KC_0
-)
-
-kbd.define_mode_key :RAISE, [ nil, :raise, nil, nil ]
 kbd.define_mode_key :LOWER, [ nil, :lower, nil, nil ]
+kbd.define_mode_key :RAISE, [ nil, :raise, nil, nil ]
 
 kbd.start!
