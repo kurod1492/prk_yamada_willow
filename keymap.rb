@@ -1,4 +1,6 @@
-kbd=Keyboard.new
+require "consumer_key"
+
+kbd = Keyboard.new
 row0, row1, row2, row3, row4, row5, row6, row7, row8, row9 = 29, 28, 27, 26, 22, 20, 23, 21, 1, 2
 col0, col1, col2, col3, col4, col5, col6, col7, col8, col9 = 29, 28, 27, 26, 22, 20, 23, 21, 1, 2
 
@@ -19,42 +21,55 @@ kbd.init_matrix_pins(
 
 #default layer should be added at first
 kbd.add_layer :default, %i(
-KC_ESC  KC_1 KC_2 KC_3    KC_4    KC_5                   KC_6  KC_7    KC_8     KC_9    KC_0     KC_BSPC
-KC_TAB  KC_Q KC_W KC_E    KC_R    KC_T                   KC_Y  KC_U    KC_I     KC_O    KC_P     KC_MINUS
-KC_LCTL KC_A KC_S KC_D    KC_F    KC_G                   KC_H  KC_J    KC_K     KC_L    KC_SCLN  KC_QUOT
-KC_LSFT KC_Z KC_X KC_C    KC_V    KC_B  KC_LBRC KC_B     KC_N  KC_M    KC_COMMA KC_DOT  KC_SLASH KC_RSFT
-                  KC_LGUI KC_LALT KC_SPC LOWER RAISE  KC_ENTER KC_RCTL KC_RALT
-KC_9   KC_8   KC_7
-KC_6   KC_5   KC_4 KC_PLUS
-KC_3   KC_2   KC_1 KC_MINUS
-       KC_DOT KC_0
+KC_ESC   KC_1     KC_2      KC_3     KC_4     KC_5                       KC_6       KC_7     KC_8     KC_9     KC_0      KC_BSPC
+KC_TAB   KC_Q     KC_W      KC_E     KC_R     KC_T                       KC_Y       KC_U     KC_I     KC_O     KC_P      KC_QUOT
+KC_LCTL  KC_A     KC_S      KC_D     KC_F     KC_G                       KC_H       KC_J     KC_K     KC_L     KC_SCOLON KC_SLASH
+KC_LSFT  KC_Z     KC_X      KC_C     KC_V     KC_B     KC_LBRC  KC_B     KC_N       KC_M     KC_COMMA KC_DOT   KC_RIGHT  KC_RSFT
+                            KC_LGUI  KC_LALT  LOWER    KC_SPC   KC_ENTER LEFT_RAISE KC_DOWN  KC_UP
+KC_9  KC_8     KC_7
+KC_6  KC_5     KC_4   KC_PLUS
+KC_3  KC_2     KC_1   KC_MINUS
+      KC_DOT   KC_0
 )
 
 kbd.add_layer :lower, %i(
-KC_TILD KC_F1   KC_AT   KC_F3    KC_F4   KC_F5                  KC_F6   KC_F7   KC_F8    KC_F9    KC_F10    KC_BSLS
-KC_TAB  KC_Q    KC_W    KC_E     KC_R    KC_T                   KC_Y    KC_U    KC_I     KC_O     KC_P      KC_EQLS
-KC_LCTL KC_A    KC_S    KC_D     KC_F    KC_G                   KC_H    KC_J    KC_K     KC_L     KC_SCOLON KC_PLUS
-KC_LSFT KC_Z    KC_X    KC_C     KC_V    KC_B  KC_LCBR KC_RCBR  KC_N    KC_M    KC_COMMA KC_DOT   KC_SLASH  KC_RSFT
-                  KC_LGUI KC_LALT KC_SPC LOWER RAISE  KC_ENTER KC_RCTL KC_RALT
-KC_9   KC_8   KC_7
-KC_6   KC_5   KC_4 KC_PLUS
-KC_3   KC_2   KC_1 KC_MINUS
-       KC_DOT KC_0
+KC_GRAVE KC_F1    KC_AT     KC_F3    KC_F4    KC_F5                      KC_F6     KC_F7      KC_F8    KC_F9    KC_F10    KC_BSPC
+KC_TAB   KC_Q     KC_W      KC_E     KC_R     KC_T                       KC_Y      KC_U       KC_I     KC_F11   KC_F12    KC_BSLASH
+KC_LCTL  KC_A     KC_S      KC_D     KC_F     KC_G                       KC_H      KC_UNDS    KC_EQUAL KC_RIGHT KC_COLON  KC_NO
+KC_LSFT  KC_Z     KC_X      KC_C     KC_V     KC_B     KC_LBRC  KC_RBRC  KC_N      KC_M       KC_COMMA KC_BRIU  KC_VOLU  KC_RSFT
+                            KC_LGUI  KC_LALT  KC_NO    KC_NO    KC_NO    KC_SCOLON KC_VOLD    KC_BRID 
+KC_PGUP   KC_UP     KC_HOME
+KC_RIGHT  KC_5      KC_LEFT  KC_PLUS
+KC_PGDOWN KC_DOWN   KC_END   KC_MINUS
+          KC_DELETE KC_INSERT
 )
 
 kbd.add_layer :raise, %i(
-KC_GRAVE KC_F1 KC_F2 KC_F3   KC_F4   KC_F5                  KC_F6    KC_F7   KC_F8    KC_F9    KC_F10    KC_PIPE
-KC_TAB   KC_Q  KC_W  KC_E    KC_R    KC_T                   KC_Y     KC_U    KC_UP    KC_F11   KC_F12    KC_EQLS
-KC_LCTL  KC_A  KC_S  KC_D    KC_F    KC_G                   KC_H     KC_LEFT KC_DOWN  KC_RIGHT KC_SCOLON KC_EQLS
-KC_LSFT  KC_Z  KC_X  KC_C    KC_V    KC_B  KC_LBRC KC_RBRC  KC_N     KC_M    KC_COMMA KC_DOT   KC_SLASH  KC_RSFT
-                  KC_LGUI KC_LALT KC_SPC LOWER RAISE  KC_ENTER KC_RCTL KC_RALT
+KC_TILD  KC_F1    KC_F2     KC_F3    KC_F4    KC_F5                      KC_F6    KC_F7    KC_F8    KC_F9    KC_F10    KC_BSPC
+KC_TAB   BOOTSEL  KC_W      KC_E     KC_R     KC_T                       KC_Y     KC_U     KC_I     KC_HOME  KC_END    KC_PIPE
+KC_LCTL  KC_A     KC_S      KC_D     KC_F     KC_G                       KC_LEFT  KC_MINUS KC_PLUS  KC_RIGHT KC_SCOLON KC_NO
+KC_LSFT  KC_Z     KC_X      KC_C     KC_V     KC_B     KC_LCBR  KC_RCBR  KC_N     KC_M     KC_COMMA KC_DOT   KC_SLASH  KC_RSFT
+                            KC_LGUI  KC_LALT  KC_NO    KC_NO    KC_NO    KC_NO    KC_NO    KC_NO 
 KC_9   KC_8   KC_7
 KC_6   KC_5   KC_4 KC_PLUS
 KC_3   KC_2   KC_1 KC_MINUS
        KC_DOT KC_0
 )
-
 kbd.define_mode_key :LOWER, [ nil, :lower, nil, nil ]
-kbd.define_mode_key :RAISE, [ nil, :raise, nil, nil ]
+#kbd.define_mode_key :RAISE, [ nil, :raise, nil, nil ]
+kbd.define_mode_key :BOOTSEL, [ Proc.new { kbd.bootsel! }, nil, 200, nil ]
+
+kbd.define_mode_key :RAISE_SCOLON,[ %i(KC_SCOLON), :raise, 300, 150 ]
+kbd.define_mode_key :LEFT_RAISE,[ %i(KC_LEFT), :raise, 300, 150 ]
+#                                 ^^^^^^^^^^^^^^^^^^^^  ^^^^^^^  ^^^  ^^^
+#                                     (1)                   (2)      (3)  (4)
+# (1): Symbol of a keycode, Array of multiple keycodes, or Proc which is going
+#      to be called when you tap.
+# (2): Symbol of a keycode (only a modifier), Symbol of a layer to be held, or
+#      Proc.
+# (3): Release-time threshold(ms). If you release the key within the time,
+#      (1) key is going to be invoked once.
+# (4): Re-push time threshold(ms). Under the state of (3), if you re-push the
+#      key within the time, (1) key is going to be kept pressed
 
 kbd.start!
