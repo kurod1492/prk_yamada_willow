@@ -61,8 +61,8 @@ KC_NO KC_F3 KC_F4 KC_F5
 
 kbd.define_mode_key :LOWER,        [ nil,                       :lower,   nil, nil ]
 kbd.define_mode_key :RAISE,        [ nil,                       :raise,   nil, nil ]
-kbd.define_mode_key :SPC_LOWER,    [ :KC_SPC,                   :lower,   150, 150 ]
-kbd.define_mode_key :ENT_RAISE,    [ :KC_ENTER,                 :raise,   150, 150 ]
+kbd.define_mode_key :SPC_LOWER,    [ :KC_SPC,                   :lower,   300, 300 ]
+kbd.define_mode_key :ENT_RAISE,    [ :KC_ENTER,                 :raise,   300, 300 ]
 kbd.define_mode_key :RAISE_LEFT,   [ :KC_LEFT,                  :raise,   150, 150 ]
 kbd.define_mode_key :BOOTSEL,      [ Proc.new { kbd.bootsel! }, nil,      200, nil ]
 #                                 ^^^^^^^^^^^^^^^^^^^^  ^^^^^^^  ^^^  ^^^
