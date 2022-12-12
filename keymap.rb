@@ -30,7 +30,7 @@ KC_PGUP   KC_UP     KC_HOME
 KC_RIGHT  KC_K      KC_LEFT  KC_PLUS
 KC_PGDOWN KC_DOWN   KC_END   KC_MINUS
           KC_DELETE KC_INSERT
-KC_NO KC_F3 KC_F4 KC_F5
+KC_NO RGB_TOG KC_F3 KC_F4
 )
 
 kbd.add_layer :lower, %i(
@@ -43,7 +43,7 @@ KC_9  KC_8     KC_7
 KC_6  KC_5     KC_4   KC_PLUS
 KC_3  KC_2     KC_1   KC_MINUS
       KC_DOT   KC_0
-KC_NO KC_F3 KC_F4 KC_F5
+KC_NO KC_F5 KC_F6 KC_F7
 )
 
 kbd.add_layer :raise, %i(
@@ -56,7 +56,7 @@ KC_9   KC_8   KC_7
 KC_6   KC_5   KC_4 KC_PLUS
 KC_3   KC_2   KC_1 KC_MINUS
        KC_DOT KC_0
-KC_NO KC_F3 KC_F4 KC_F5
+KC_NO KC_F8 KC_F9 KC_F10
 )
 
 kbd.define_mode_key :LOWER,        [ nil,                       :lower,   nil, nil ]
