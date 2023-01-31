@@ -21,24 +21,24 @@ kbd.init_matrix_pins(
 
 #default layer should be added at first
 kbd.add_layer :default, %i(
-KC_ESC   KC_1     KC_2      KC_3     KC_4      KC_5                          KC_6       KC_7     KC_8     KC_9     KC_0      KC_BSPC
-KC_TAB   KC_Q     KC_W      KC_E     KC_R      KC_T                          KC_Y       KC_U     KC_I     KC_O     KC_P      KC_BSLASH
-KC_LCTL  KC_A     KC_S      KC_D     KC_F      KC_G                          KC_H       KC_J     KC_K     KC_L     KC_SCOLON KC_QUOT
-KC_LSFT  KC_Z     KC_X      KC_C     KC_V      KC_B    KC_LBRC    KC_RBRC    KC_N       KC_M     KC_COMMA KC_DOT   KC_SLASH  KC_RIGHT
-                            KC_LALT  KC_LGUI   KC_LBRC SPC_LOWER  ENT_RAISE  KC_LEFT KC_DOWN  KC_UP
+KC_ESC   KC_1     KC_2      KC_3     KC_4     KC_5                              KC_6         KC_7      KC_8     KC_9     KC_0      KC_BSPC
+KC_TAB   KC_Q     KC_W      KC_E     KC_R     KC_T                              KC_Y         KC_U      KC_I     KC_O     KC_P      KC_BSLASH
+KC_LCTL  KC_A     KC_S      KC_D     KC_F     KC_G                              KC_H         KC_J      KC_K     KC_L     KC_SCOLON KC_QUOT
+KC_LSFT  KC_Z     KC_X      KC_C     KC_V     KC_B        KC_LBRC    KC_RBRC    KC_N         KC_M      KC_COMMA KC_DOT   KC_SLASH  KC_RSFT  
+                            KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_ENTER   KANA_RAISE   KC_LALT   KC_RGUI
 KC_PGUP   KC_UP     KC_HOME
-KC_RIGHT  KC_K      KC_LEFT  KC_PLUS
+KC_RIGHT  KC_NO     KC_LEFT  KC_PLUS
 KC_PGDOWN KC_DOWN   KC_END   KC_MINUS
           KC_DELETE KC_INSERT
 KC_NO RGB_TOG KC_F3 KC_F4
 )
 
 kbd.add_layer :lower, %i(
-KC_GRAVE KC_F1    KC_AT     KC_F3    KC_F4     KC_F5                         KC_F6     KC_F7     KC_F8    KC_F9    KC_F10    KC_PLUS
-KC_TAB   KC_Q     KC_W      KC_E     KC_R      KC_T                          KC_Y      KC_U      KC_I     KC_F11   KC_P      KC_BSLASH
-KC_LCTL  KC_A     KC_S      KC_D     KC_F      KC_G                          KC_H      KC_MINUS  KC_PLUS  KC_EQUAL KC_RABK   KC_QUOT
-KC_LSFT  KC_Z     KC_X      KC_C     KC_V      KC_B     KC_LABK   KC_B       KC_N      KC_M      KC_RABK  KC_NO    KC_NO     KC_VOLU
-                            KC_LALT  KC_LGUI   KC_NO    KC_NO     KC_NO      KC_VOLD   KC_BRID   KC_BRIU
+KC_TILD  KC_EXLM  KC_AT     KC_HASH  KC_DLR   KC_PERC                           KC_CIRC      KC_AMPR   KC_ASTER KC_LCBR   KC_RCBR   KC_EQUAL
+KC_TAB   KC_NO    KC_UP     KC_NO    KC_NO    KC_NO                             KC_NO        KC_NO     KC_NO    KC_NO     KC_NO     KC_PIPE
+KC_LCTL  KC_LEFT  KC_DOWN   KC_RIGHT KC_NO    KC_NO                             KC_UNDS      KC_MINUS  KC_EQUAL KC_PLUS   KC_NO     KC_GRAVE
+KC_LSFT  KC_NO    KC_NO     KC_NO    KC_NO    KC_NO       KC_LCBR    KC_RCBR    KC_NO        KC_NO     KC_LABK  KC_RABK   KC_TILD   KC_RSFT  
+                            KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_ENTER   KANA_RAISE   KC_LALT   KC_RGUI
 KC_9  KC_8     KC_7
 KC_6  KC_5     KC_4   KC_PLUS
 KC_3  KC_2     KC_1   KC_MINUS
@@ -47,11 +47,11 @@ KC_NO KC_F5 KC_F6 KC_F7
 )
 
 kbd.add_layer :raise, %i(
-KC_TILD  KC_F1    KC_F2     KC_F3    KC_F4    KC_F5                          KC_F6     KC_F7     KC_F8    KC_F9    KC_F10    KC_EQUAL
-KC_TAB   BOOTSEL  KC_W      KC_E     KC_R     KC_T                           KC_PGDOWN KC_PGUP   KC_HOME  KC_END   KC_NO     KC_PIPE
-KC_LCTL  KC_A     KC_S      KC_D     KC_F     KC_G                           KC_H      KC_UNDS   KC_EQUAL KC_PLUS  KC_NO     KC_QUOT
-KC_LSFT  KC_Z     KC_X      KC_C     KC_V     KC_B     KC_RABK    KC_B       KC_N      KC_M      KC_COMMA KC_DOT   KC_SLASH  KC_VOLU
-                            KC_LALT  KC_LGUI  KC_NO    KC_NO      KC_NO      KC_NO     KC_PGDOWN KC_PGUP
+KC_F1    KC_F2    KC_F3     KC_F4    KC_F5    KC_F6                             KC_F7        KC_F8     KC_F9    KC_F10    KC_F11    KC_F12
+KC_TAB   KC_NO    KC_NO     KC_NO    KC_NO    KC_NO                             KC_NO        KC_NO     KC_NO    KC_NO     KC_NO     KC_VOLU
+KC_LCTL  KC_A     KC_S      KC_D     KC_F     KC_G                              KC_NO        KC_LEFT   KC_DOWN  KC_UP     KC_RIGHT  KC_VOLD
+KC_LSFT  BOOTSEL  KC_X      KC_C     KC_V     KC_NO       KC_PGUP    KC_PGDOWN  KC_HOME      KC_END    KC_NO    KC_NO     KC_NO     KC_RSFT
+                            KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_ENTER   KANA_RAISE   KC_LALT   KC_RGUI
 KC_9   KC_8   KC_7
 KC_6   KC_5   KC_4 KC_PLUS
 KC_3   KC_2   KC_1 KC_MINUS
@@ -59,10 +59,16 @@ KC_3   KC_2   KC_1 KC_MINUS
 KC_NO KC_F8 KC_F9 KC_F10
 )
 
+
+kbd.define_composite_key :DESK_PREV, %i(KC_LCTL KC_LEFT)  # move to prev desktop
+kbd.define_composite_key :DESK_NEXT, %i(KC_LCTL KC_RIGHT) # move to next desktop
+
 kbd.define_mode_key :LOWER,        [ nil,                       :lower,   nil, nil ]
 kbd.define_mode_key :RAISE,        [ nil,                       :raise,   nil, nil ]
 kbd.define_mode_key :SPC_LOWER,    [ :KC_SPC,                   :lower,   300, 300 ]
 kbd.define_mode_key :ENT_RAISE,    [ :KC_ENTER,                 :raise,   300, 300 ]
+kbd.define_mode_key :EISU_LOWER,   [ :KC_LANG2,                 :lower,   300, 300 ]
+kbd.define_mode_key :KANA_RAISE,   [ :KC_LANG1,                 :raise,   300, 300 ]
 kbd.define_mode_key :RAISE_LEFT,   [ :KC_LEFT,                  :raise,   150, 150 ]
 kbd.define_mode_key :BOOTSEL,      [ Proc.new { kbd.bootsel! }, nil,      200, nil ]
 #                                 ^^^^^^^^^^^^^^^^^^^^  ^^^^^^^  ^^^  ^^^
@@ -88,19 +94,19 @@ kbd.append encoder_1
 
 encoder_2 = RotaryEncoder.new(6, 7)
 encoder_2.counterclockwise do
-  kbd.send_key :KC_PGUP
+  kbd.send_key :KC_F1
 end
 encoder_2.clockwise do
-  kbd.send_key :KC_PGDOWN
+  kbd.send_key :KC_F2
 end
 kbd.append encoder_2
 
 encoder_3 = RotaryEncoder.new(8, 9)
 encoder_3.counterclockwise do
-  kbd.send_key %i(KC_LCTL KC_LEFT) # move to prev desktop
+  kbd.send_key :KC_PGUP
 end
 encoder_3.clockwise do
-  kbd.send_key %i(KC_LCTL KC_RIGHT) # move to next desktop
+  kbd.send_key :KC_PGDOWN
 end
 kbd.append encoder_3
 
