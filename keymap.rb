@@ -30,7 +30,7 @@ KC_PGUP   KC_UP     KC_HOME
 KC_RIGHT  KC_NO     KC_LEFT  KC_PLUS
 KC_PGDOWN KC_DOWN   KC_END   KC_MINUS
           KC_DELETE KC_INSERT
-KC_NO RGB_TOG KC_F3 KC_F4
+KC_NO RGB_TOG BROWSER_ZOOMRESET KC_F4
 )
 
 kbd.add_layer :lower, %i(
@@ -48,8 +48,8 @@ KC_NO KC_F5 KC_F6 KC_F7
 
 kbd.add_layer :raise, %i(
 KC_F1    KC_F2    KC_F3     KC_F4    KC_F5    KC_F6                             KC_F7        KC_F8     KC_F9    KC_F10    KC_F11    KC_F12
-KC_TAB   KC_NO    KC_NO     KC_NO    KC_NO    KC_NO                             KC_NO        KC_NO     KC_NO    KC_NO     KC_NO     KC_VOLU
-KC_LCTL  KC_A     KC_S      KC_D     KC_F     KC_G                              KC_NO        KC_LEFT   KC_DOWN  KC_UP     KC_RIGHT  KC_VOLD
+KC_TAB   KC_NO    KC_UP     KC_NO    KC_NO    KC_NO                             KC_NO        KC_NO     KC_UP    KC_NO     KC_BRIU   KC_VOLU
+KC_LCTL  KC_LEFT  KC_DOWN   KC_RIGHT KC_F     KC_G                              KC_NO        KC_LEFT   KC_DOWN  KC_RIGHT  KC_BRID   KC_VOLD
 KC_LSFT  BOOTSEL  KC_X      KC_C     KC_V     KC_NO       KC_PGUP    KC_PGDOWN  KC_HOME      KC_END    KC_NO    KC_NO     KC_NO     KC_RSFT
                             KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_ENTER   KANA_RAISE   KC_LALT   KC_RGUI
 KC_9   KC_8   KC_7
@@ -62,6 +62,7 @@ KC_NO KC_F8 KC_F9 KC_F10
 
 kbd.define_composite_key :DESK_PREV, %i(KC_LCTL KC_LEFT)  # move to prev desktop
 kbd.define_composite_key :DESK_NEXT, %i(KC_LCTL KC_RIGHT) # move to next desktop
+kbd.define_composite_key :BROWSER_ZOOMRESET, %i(KC_LGUI KC_0) # browser zoom reset
 
 kbd.define_mode_key :LOWER,        [ nil,                       :lower,   nil, nil ]
 kbd.define_mode_key :RAISE,        [ nil,                       :raise,   nil, nil ]
@@ -94,19 +95,19 @@ kbd.append encoder_1
 
 encoder_2 = RotaryEncoder.new(6, 7)
 encoder_2.counterclockwise do
-  kbd.send_key :KC_F1
+  kbd.send_key %i(KC_LGUI KC_MINUS)
 end
 encoder_2.clockwise do
-  kbd.send_key :KC_F2
+  kbd.send_key %i(KC_LGUI KC_EQUAL)
 end
 kbd.append encoder_2
 
 encoder_3 = RotaryEncoder.new(8, 9)
 encoder_3.counterclockwise do
-  kbd.send_key :KC_PGUP
+  kbd.send_key %i(KC_LCTL KC_LEFT)
 end
 encoder_3.clockwise do
-  kbd.send_key :KC_PGDOWN
+  kbd.send_key %i(KC_LCTL KC_RIGHT)
 end
 kbd.append encoder_3
 
