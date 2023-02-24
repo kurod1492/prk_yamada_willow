@@ -34,11 +34,11 @@ KC_NO RGB_TOG BROWSER_ZOOMRESET KC_F4
 )
 
 kbd.add_layer :lower, %i(
-KC_TILD  KC_EXLM  KC_AT     KC_HASH  KC_DLR   KC_PERC                           KC_CIRC      KC_AMPR   KC_ASTER KC_LCBR   KC_RCBR   KC_EQUAL
-KC_TAB   KC_NO    KC_UP     KC_NO    KC_NO    KC_NO                             KC_NO        KC_NO     KC_NO    KC_NO     KC_NO     KC_PIPE
-KC_LCTL  KC_LEFT  KC_DOWN   KC_RIGHT KC_NO    KC_NO                             KC_UNDS      KC_MINUS  KC_EQUAL KC_PLUS   KC_NO     KC_GRAVE
+KC_F1    KC_F2    KC_F3     KC_F4    KC_F5    KC_F6                             KC_F7        KC_F8     KC_F9    KC_F10    KC_F11    KC_F12
+KC_TAB   KC_NO    KC_UP     KC_NO    KC_NO    KC_NO                             KC_NO        KC_NO     KC_NO    KC_NO     KC_NO     KC_NO
+KC_LCTL  KC_LEFT  KC_DOWN   KC_RIGHT KC_NO    KC_NO                             KC_NO        KC_NO     KC_NO    KC_NO     KC_NO     KC_NO
 KC_LSFT  KC_NO    KC_NO     KC_NO    KC_NO    KC_NO       KC_LCBR    KC_RCBR    KC_NO        KC_NO     KC_LABK  KC_RABK   KC_TILD   KC_RSFT  
-                            KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_ENTER   KANA_RAISE   KC_LALT   KC_RGUI
+                            KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_ENTER   KANA_RAISE   KC_HOME   KC_END
 KC_9  KC_8     KC_7
 KC_6  KC_5     KC_4   KC_PLUS
 KC_3  KC_2     KC_1   KC_MINUS
@@ -47,11 +47,11 @@ KC_NO KC_F5 KC_F6 KC_F7
 )
 
 kbd.add_layer :raise, %i(
-KC_F1    KC_F2    KC_F3     KC_F4    KC_F5    KC_F6                             KC_F7        KC_F8     KC_F9    KC_F10    KC_F11    KC_F12
-KC_TAB   KC_NO    KC_UP     KC_NO    KC_NO    KC_NO                             KC_NO        KC_NO     KC_UP    KC_NO     KC_BRIU   KC_VOLU
-KC_LCTL  KC_LEFT  KC_DOWN   KC_RIGHT KC_F     KC_G                              KC_NO        KC_LEFT   KC_DOWN  KC_RIGHT  KC_BRID   KC_VOLD
-KC_LSFT  BOOTSEL  KC_X      KC_C     KC_V     KC_NO       KC_PGUP    KC_PGDOWN  KC_HOME      KC_END    KC_NO    KC_NO     KC_NO     KC_RSFT
-                            KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_ENTER   KANA_RAISE   KC_LALT   KC_RGUI
+KC_TILD  KC_EXLM  KC_AT     KC_HASH  KC_DLR   KC_PERC                           KC_CIRC      KC_AMPR   KC_ASTER KC_LCBR   KC_RCBR   KC_EQUAL
+KC_TAB   KC_NO    KC_UP     KC_NO    KC_NO    KC_NO                             KC_NO        KC_NO     KC_NO    KC_NO     KC_NO     KC_NO
+KC_LCTL  KC_LEFT  KC_DOWN   KC_RIGHT KC_NO    KC_NO                             KC_UNDS      KC_MINUS  KC_EQUAL KC_PLUS   KC_NO     KC_GRAVE
+KC_LSFT  BOOTSEL  KC_X      KC_C     KC_V     KC_NO       KC_PGUP    KC_PGDOWN  KC_HOME      KC_END    KC_NO    KC_UP     KC_RIGHT  KC_RSFT
+                            KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_ENTER   KANA_RAISE   KC_LEFT   KC_DOWN
 KC_9   KC_8   KC_7
 KC_6   KC_5   KC_4 KC_PLUS
 KC_3   KC_2   KC_1 KC_MINUS
@@ -104,10 +104,10 @@ kbd.append encoder_2
 
 encoder_3 = RotaryEncoder.new(8, 9)
 encoder_3.counterclockwise do
-  kbd.send_key %i(KC_LCTL KC_LEFT)
+  kbd.send_key :KC_PGUP
 end
 encoder_3.clockwise do
-  kbd.send_key %i(KC_LCTL KC_RIGHT)
+  kbd.send_key :KC_PGDOWN
 end
 kbd.append encoder_3
 
