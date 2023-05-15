@@ -28,9 +28,9 @@ KC_LSFT  KC_Z     KC_X      KC_C     KC_V     KC_B        KC_LBRC    KC_RBRC    
                             KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_ENTER   KANA_RAISE   KC_DOWN   KC_UP
 KC_PGUP   KC_UP     KC_HOME
 KC_RIGHT  KC_NO     KC_LEFT  KC_PLUS
-KC_PGDOWN KC_DOWN   KC_END   KC_MINUS
-          KC_DELETE KC_INSERT
-KC_NO RGB_TOG BROWSER_ZOOMRESET PASTE
+KC_RIGHT  KC_UP   KC_DOWN   KC_LEFT
+          KC_DELETE KC_KP_0
+KC_NO BROWSER_ZOOMRESET RGB_TOG PASTE
 )
 
 kbd.add_layer :lower, %i(
@@ -48,7 +48,7 @@ KC_NO KC_F5 KC_F6 KC_F7
 
 kbd.add_layer :raise, %i(
 KC_F1    KC_F2    KC_F3     KC_F4    KC_F5    KC_F6                             KC_F7        KC_F8     KC_F9    KC_F10    KC_F11    KC_F12
-KC_TAB   KC_NO    KC_NO     KC_NO    KC_NO    KC_NO                             KC_NO        KC_NO     KC_NO    KC_NO     KC_NO     KC_NO
+KC_TILD  KC_EXLM  KC_AT     KC_HASH  KC_DLR   KC_PERC                           KC_CIRC      KC_AMPR   KC_ASTER KC_LPRN   KC_RPRN   KC_EQUAL
 KC_LCTL  KC_NO    KC_NO     KC_NO    KC_NO    KC_NO                             KC_LEFT      KC_DOWN   KC_UP    KC_RIGHT  KC_NO     KC_NO
 KC_LSFT  BOOTSEL  CUT       COPY     PASTE    KC_NO       KC_PGUP    KC_PGDOWN  KC_HOME      KC_END    KC_NO    KC_NO     KC_VOLD   KC_VOLU
                             KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_ENTER   KANA_RAISE   KC_NO     KC_NO
@@ -88,21 +88,22 @@ kbd.define_mode_key :BOOTSEL,      [ Proc.new { kbd.bootsel! }, nil,      200, n
 
 encoder_1 = RotaryEncoder.new(4, 5)
 encoder_1.counterclockwise do
-  kbd.send_key :RGB_RMOD
+  kbd.send_key %i(KC_LGUI KC_MINUS)
 end
 encoder_1.clockwise do
-  kbd.send_key :RGB_MOD
+  kbd.send_key %i(KC_LGUI KC_EQUAL)
 end
 kbd.append encoder_1
 
 encoder_2 = RotaryEncoder.new(6, 7)
 encoder_2.counterclockwise do
-  kbd.send_key %i(KC_LGUI KC_MINUS)
+  kbd.send_key :RGB_RMOD
 end
 encoder_2.clockwise do
-  kbd.send_key %i(KC_LGUI KC_EQUAL)
+  kbd.send_key :RGB_MOD
 end
 kbd.append encoder_2
+
 
 encoder_3 = RotaryEncoder.new(8, 9)
 encoder_3.counterclockwise do
