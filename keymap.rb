@@ -26,10 +26,10 @@ KC_TAB   KC_Q     KC_W      KC_E     KC_R     KC_T                              
 KC_LCTL  KC_A     KC_S      KC_D     KC_F     KC_G                              KC_H         KC_J      KC_K     KC_L     KC_SCOLON KC_QUOT
 KC_LSFT  KC_Z     KC_X      KC_C     KC_V     KC_B        KC_LBRC    KC_RBRC    KC_N         KC_M      KC_COMMA KC_DOT   KC_SLASH  KC_RIGHT
                             KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_ENTER   KANA_RAISE   KC_DOWN   KC_UP
-KC_PGUP   KC_UP     KC_HOME
-KC_RIGHT  KC_5      KC_LEFT   KC_PLUS
-KC_PGDOWN KC_DOWN   KC_END    KC_MINUS
-          KC_DELETE KC_KP_0
+KC_KP_9  KC_KP_8   KC_KP_7
+KC_KP_6  KC_KP_5   KC_KP_4  KC_KP_PLUS
+KC_KP_3  KC_KP_2   KC_KP_1  KC_KP_MINUS
+         KC_KP_DOT KC_KP_0
 KC_NO BROWSER_ZOOMRESET RGB_TOG PASTE
 )
 
@@ -39,10 +39,10 @@ KC_TAB   KC_1     KC_2      KC_3     KC_4     KC_5                              
 KC_LCTL  KC_NO    KC_NO     KC_NO    KC_NO    KC_NO                             KC_UNDS      KC_MINUS  KC_EQUAL KC_PLUS   KC_NO     KC_GRAVE
 KC_LSFT  KC_NO    CUT       COPY     PASTE    KC_NO       KC_LCBR    KC_RCBR    KC_NO        KC_NO     KC_LABK  KC_RABK   KC_TILD   KC_RIGHT
                             KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_LEFT    KANA_RAISE   KC_DOWN   KC_UP
-KC_9  KC_8     KC_7
-KC_6  KC_5     KC_4   KC_PLUS
-KC_3  KC_2     KC_1   KC_MINUS
-      KC_DOT   KC_0
+KC_PGUP   KC_UP     KC_HOME
+KC_RIGHT  KC_NO     KC_LEFT   KC_KP_PLUS
+KC_PGDOWN KC_DOWN   KC_END    KC_KP_MINUS
+          KC_DELETE KC_KP_0
 KC_NO KC_F5 KC_F6 KC_F7
 )
 
