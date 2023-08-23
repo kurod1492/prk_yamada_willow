@@ -27,8 +27,8 @@ KC_LCTL  KC_A     KC_S      KC_D     KC_F     KC_G                              
 KC_LSFT  KC_Z     KC_X      KC_C     KC_V     KC_B        KC_LBRC    KC_RBRC    KC_N         KC_M      KC_COMMA KC_DOT   KC_SLASH  KC_RIGHT
                             KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_ENTER   KANA_RAISE   KC_DOWN   KC_UP
 KC_PGUP   KC_UP     KC_HOME
-KC_RIGHT  KC_NO     KC_LEFT  KC_PLUS
-KC_RIGHT  KC_UP   KC_DOWN   KC_LEFT
+KC_RIGHT  KC_5      KC_LEFT   KC_PLUS
+KC_PGDOWN KC_DOWN   KC_END    KC_MINUS
           KC_DELETE KC_KP_0
 KC_NO BROWSER_ZOOMRESET RGB_TOG PASTE
 )
@@ -37,8 +37,8 @@ kbd.add_layer :lower, %i(
 KC_TILD  KC_EXLM  KC_AT     KC_HASH  KC_DLR   KC_PERC                           KC_CIRC      KC_AMPR   KC_ASTER KC_LCBR   KC_RCBR   KC_EQUAL
 KC_TAB   KC_1     KC_2      KC_3     KC_4     KC_5                              KC_6         KC_7      KC_8     KC_9      KC_0      KC_NO
 KC_LCTL  KC_NO    KC_NO     KC_NO    KC_NO    KC_NO                             KC_UNDS      KC_MINUS  KC_EQUAL KC_PLUS   KC_NO     KC_GRAVE
-KC_LSFT  KC_NO    CUT       COPY     PASTE    KC_NO       KC_LCBR    KC_RCBR    KC_NO        KC_NO     KC_LABK  KC_RABK   KC_TILD   KC_NO  
-                            KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_ENTER   KANA_RAISE   KC_BRID   KC_BRIU
+KC_LSFT  KC_NO    CUT       COPY     PASTE    KC_NO       KC_LCBR    KC_RCBR    KC_NO        KC_NO     KC_LABK  KC_RABK   KC_TILD   KC_RIGHT
+                            KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_LEFT    KANA_RAISE   KC_DOWN   KC_UP
 KC_9  KC_8     KC_7
 KC_6  KC_5     KC_4   KC_PLUS
 KC_3  KC_2     KC_1   KC_MINUS
@@ -49,9 +49,9 @@ KC_NO KC_F5 KC_F6 KC_F7
 kbd.add_layer :raise, %i(
 KC_F1    KC_F2    KC_F3     KC_F4    KC_F5    KC_F6                             KC_F7        KC_F8     KC_F9    KC_F10    KC_F11    KC_F12
 KC_TILD  KC_EXLM  KC_AT     KC_HASH  KC_DLR   KC_PERC                           KC_CIRC      KC_AMPR   KC_ASTER KC_LPRN   KC_RPRN   KC_EQUAL
-KC_LCTL  KC_NO    KC_NO     KC_NO    KC_NO    KC_NO                             KC_LEFT      KC_DOWN   KC_UP    KC_RIGHT  KC_NO     KC_NO
-KC_LSFT  BOOTSEL  CUT       COPY     PASTE    KC_NO       KC_PGUP    KC_PGDOWN  KC_HOME      KC_END    KC_NO    KC_NO     KC_VOLD   KC_VOLU
-                            KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_ENTER   KANA_RAISE   KC_NO     KC_NO
+KC_LCTL  KC_NO    KC_NO     KC_NO    KC_NO    KC_NO                             KC_LEFT      KC_DOWN   KC_UP    KC_RIGHT  KC_NO     KC_VOLU
+KC_LSFT  BOOTSEL  CUT       COPY     PASTE    KC_NO       KC_PGUP    KC_PGDOWN  KC_HOME      KC_END    TEI      CHUU      KOU       KC_VOLD
+                            KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_ENTER   KANA_RAISE   KC_BRID   KC_BRIU
 KC_9   KC_8   KC_7
 KC_6   KC_5   KC_4 KC_PLUS
 KC_3   KC_2   KC_1 KC_MINUS
@@ -65,6 +65,10 @@ kbd.define_composite_key :BROWSER_ZOOMRESET, %i(KC_LGUI KC_0) # browser zoom res
 kbd.define_composite_key :CUT, %i(KC_LGUI KC_X)
 kbd.define_composite_key :COPY, %i(KC_LGUI KC_C)
 kbd.define_composite_key :PASTE, %i(KC_LGUI KC_V)
+
+kbd.define_mode_key :TEI, [ Proc.new { kbd.macro("tei", []) }, nil, 200, nil]
+kbd.define_mode_key :CHUU, [ Proc.new { kbd.macro("chuu", []) }, nil, 200, nil]
+kbd.define_mode_key :KOU, [ Proc.new { kbd.macro("kou", []) }, nil, 200, nil]
 
 kbd.define_mode_key :LOWER,        [ nil,                       :lower,   nil, nil ]
 kbd.define_mode_key :RAISE,        [ nil,                       :raise,   nil, nil ]
@@ -104,7 +108,6 @@ encoder_2.clockwise do
 end
 kbd.append encoder_2
 
-
 encoder_3 = RotaryEncoder.new(8, 9)
 encoder_3.counterclockwise do
   kbd.send_key :KC_LEFT
@@ -115,7 +118,7 @@ end
 kbd.append encoder_3
 
 rgb = RGB.new(0, 101, 0)
-rgb.effect     = :circle
+rgb.effect     = :ruby
 rgb.speed      = 22  # 1-31  / default: 22
 rgb.hue        = 10  # 0-100 / default: 0
 rgb.saturation = 100 # 0-100 / default: 100
