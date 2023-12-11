@@ -22,7 +22,7 @@ kbd.init_matrix_pins(
 #default layer should be added at first
 kbd.add_layer :default, %i(
 KC_ESC   KC_1     KC_2      KC_3     KC_4     KC_5                              KC_6         KC_7      KC_8     KC_9     KC_0      KC_BSPC
-KC_TAB   KC_Q     KC_W      KC_E     KC_R     KC_T                              KC_Y         KC_U      KC_I     KC_O     KC_P      KC_BSLASH
+KC_TAB   KC_Q     KC_W      KC_E     KC_R     KC_T                              KC_Y         KC_U      KC_I     KC_O     KC_P      KC_MINUS
 KC_LCTL  KC_A     KC_S      KC_D     KC_F     KC_G                              KC_H         KC_J      KC_K     KC_L     KC_SCOLON KC_QUOT
 KC_LSFT  KC_Z     KC_X      KC_C     KC_V     KC_B        KC_LBRC    KC_RBRC    KC_N         KC_M      KC_COMMA KC_DOT   KC_SLASH  KC_RIGHT
                             KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_ENTER   KANA_RAISE   KC_DOWN   KC_UP
@@ -30,33 +30,33 @@ KC_KP_9  KC_KP_8   KC_KP_7
 KC_KP_6  KC_KP_5   KC_KP_4  KC_KP_PLUS
 KC_KP_3  KC_KP_2   KC_KP_1  KC_KP_MINUS
          KC_KP_DOT KC_KP_0
-KC_NO BROWSER_ZOOMRESET RGB_TOG PASTE
+KC_NO RGB_TOG BROWSER_ZOOMRESET PASTE
 )
 
 kbd.add_layer :lower, %i(
-KC_TILD  KC_EXLM  KC_AT     KC_HASH  KC_DLR   KC_PERC                           KC_CIRC      KC_AMPR   KC_ASTER KC_LCBR   KC_RCBR   KC_EQUAL
-KC_TAB   KC_1     KC_2      KC_3     KC_4     KC_5                              KC_6         KC_7      KC_8     KC_9      KC_0      KC_NO
-KC_LCTL  KC_NO    KC_NO     KC_NO    KC_NO    KC_NO                             KC_UNDS      KC_MINUS  KC_EQUAL KC_PLUS   KC_NO     KC_GRAVE
-KC_LSFT  KC_NO    CUT       COPY     PASTE    KC_NO       KC_LCBR    KC_RCBR    KC_NO        KC_NO     KC_LABK  KC_RABK   KC_TILD   KC_RIGHT
+KC_TILD  KC_EXLM   KC_AT    KC_HASH  KC_DLR   KC_PERC                           KC_CIRC      KC_AMPR   KC_ASTER KC_LCBR   KC_RCBR   KC_EQUAL
+KC_GRAVE KC_Q      KC_W     KC_E     KC_R     KC_T                              KC_Y         KC_U      KC_I     KC_O      KC_P      KC_BSLS
+KC_LCTL  SELECTALL KC_S     KC_D     KC_F     KC_G                              KC_LEFT      KC_DOWN   KC_UP    KC_RIGHT  KC_NO     KC_GRAVE
+KC_LSFT  UNDO      CUT      COPY     PASTE    KC_B        KC_PGUP    KC_B       KC_N         KC_END    KC_LABK  KC_RABK   KC_TILD   KC_RIGHT
                             KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_LEFT    KANA_RAISE   KC_DOWN   KC_UP
 KC_PGUP   KC_UP     KC_HOME
 KC_RIGHT  KC_NO     KC_LEFT   KC_KP_PLUS
 KC_PGDOWN KC_DOWN   KC_END    KC_KP_MINUS
-          KC_DELETE KC_KP_0
+          KC_DELETE KC_INS
 KC_NO KC_F5 KC_F6 KC_F7
 )
 
 kbd.add_layer :raise, %i(
 KC_F1    KC_F2    KC_F3     KC_F4    KC_F5    KC_F6                             KC_F7        KC_F8     KC_F9    KC_F10    KC_F11    KC_F12
-KC_TILD  KC_EXLM  KC_AT     KC_HASH  KC_DLR   KC_PERC                           KC_CIRC      KC_AMPR   KC_ASTER KC_LPRN   KC_RPRN   KC_EQUAL
-KC_LCTL  KC_NO    KC_NO     KC_NO    KC_NO    KC_NO                             KC_LEFT      KC_DOWN   KC_UP    KC_RIGHT  KC_NO     KC_VOLU
-KC_LSFT  BOOTSEL  CUT       COPY     PASTE    KC_NO       KC_PGUP    KC_PGDOWN  KC_HOME      KC_END    TEI      CHUU      KOU       KC_VOLD
-                            KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_ENTER   KANA_RAISE   KC_BRID   KC_BRIU
+KC_TILD  KC_Q     KC_W      KC_E     KC_R     KC_T                              KC_Y         KC_U      KC_I     KC_O      KC_P      KC_PIPE
+KC_LCTL  KC_A     KC_S      KC_D     KC_F     KC_G                              KC_UNDS      KC_MINUS  KC_EQUAL KC_PLUS   KC_SCOLON KC_GRAVE
+KC_LSFT  BOOTSEL  CUT       COPY     PASTE    RGB_TOG     KC_LCBR    KC_RCBR    TEI          CHUU      KOU      KC_NO     KC_NO     KC_VOLU
+                            KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_VOLD    KANA_RAISE   KC_BRID   KC_BRIU
 KC_9   KC_8   KC_7
 KC_6   KC_5   KC_4 KC_PLUS
 KC_3   KC_2   KC_1 KC_MINUS
        KC_DOT KC_0
-KC_NO KC_F8 KC_F9 KC_F10
+KC_NO  KC_F8  KC_F9 KC_F10
 )
 
 kbd.define_composite_key :DESK_PREV, %i(KC_LCTL KC_LEFT)  # move to prev desktop
@@ -65,6 +65,8 @@ kbd.define_composite_key :BROWSER_ZOOMRESET, %i(KC_LGUI KC_0) # browser zoom res
 kbd.define_composite_key :CUT, %i(KC_LGUI KC_X)
 kbd.define_composite_key :COPY, %i(KC_LGUI KC_C)
 kbd.define_composite_key :PASTE, %i(KC_LGUI KC_V)
+kbd.define_composite_key :UNDO, %i(KC_LGUI KC_Z)
+kbd.define_composite_key :SELECTALL, %i(KC_LGUI KC_A)
 
 kbd.define_mode_key :TEI, [ Proc.new { kbd.macro("tei", []) }, nil, 200, nil]
 kbd.define_mode_key :CHUU, [ Proc.new { kbd.macro("chuu", []) }, nil, 200, nil]
@@ -92,19 +94,19 @@ kbd.define_mode_key :BOOTSEL,      [ Proc.new { kbd.bootsel! }, nil,      200, n
 
 encoder_1 = RotaryEncoder.new(4, 5)
 encoder_1.counterclockwise do
-  kbd.send_key %i(KC_LGUI KC_MINUS)
+  kbd.send_key :RGB_RMOD
 end
 encoder_1.clockwise do
-  kbd.send_key %i(KC_LGUI KC_EQUAL)
+  kbd.send_key :RGB_MOD
 end
 kbd.append encoder_1
 
 encoder_2 = RotaryEncoder.new(6, 7)
 encoder_2.counterclockwise do
-  kbd.send_key :RGB_RMOD
+  kbd.send_key %i(KC_LGUI KC_MINUS)
 end
 encoder_2.clockwise do
-  kbd.send_key :RGB_MOD
+  kbd.send_key %i(KC_LGUI KC_EQUAL)
 end
 kbd.append encoder_2
 
@@ -118,11 +120,11 @@ end
 kbd.append encoder_3
 
 rgb = RGB.new(0, 101, 0)
-rgb.effect     = :ruby
+rgb.effect     = :swirl
 rgb.speed      = 22  # 1-31  / default: 22
-rgb.hue        = 10  # 0-100 / default: 0
+rgb.hue        = 0  # 0-100 / default: 0
 rgb.saturation = 100 # 0-100 / default: 100
-rgb.value      = 10  # 1-31  / default: 13
+rgb.value      = 13  # 1-31  / default: 13
 
 kbd.append rgb # `kbd` is an instance of Keyboard class that should be newed in advance
 
