@@ -1,3 +1,4 @@
+# keymap.rb for yamada willow
 require "consumer_key"
 
 kbd = Keyboard.new
@@ -21,37 +22,37 @@ kbd.init_matrix_pins(
 
 #default layer should be added at first
 kbd.add_layer :default, %i(
-KC_ESC   KC_1     KC_2      KC_3     KC_4     KC_5                              KC_6         KC_7      KC_8     KC_9     KC_0      KC_BSPC
-KC_TAB   KC_Q     KC_W      KC_E     KC_R     KC_T                              KC_Y         KC_U      KC_I     KC_O     KC_P      KC_MINUS
-KC_LCTL  KC_A     KC_S      KC_D     KC_F     KC_G                              KC_H         KC_J      KC_K     KC_L     KC_SCOLON KC_QUOT
-KC_LSFT  KC_Z     KC_X      KC_C     KC_V     KC_B        KC_LBRC    KC_RBRC    KC_N         KC_M      KC_COMMA KC_DOT   KC_SLASH  KC_RIGHT
-                            KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_ENTER   KANA_RAISE   KC_DOWN   KC_UP
-KC_KP_9  KC_KP_8   KC_KP_7
-KC_KP_6  KC_KP_5   KC_KP_4  KC_KP_PLUS
-KC_KP_3  KC_KP_2   KC_KP_1  KC_KP_MINUS
-         KC_KP_DOT KC_KP_0
+KC_ESC   KC_1     KC_2      KC_3     KC_4     KC_5                     KC_6    KC_7     KC_8     KC_9     KC_0      KC_BSPC
+KC_TAB   KC_Q     KC_W      KC_E     KC_R     KC_T                     KC_Y    KC_U     KC_I     KC_O     KC_P      KC_MINUS
+KC_LCTL  KC_A     KC_S      KC_D     KC_F     KC_G                     KC_H    KC_J     KC_K     KC_L     KC_SCOLON KC_QUOT
+KC_LSFT  KC_Z     KC_X      KC_C     KC_V     KC_B    KC_LBRC KC_RBRC  KC_N    KC_M     KC_COMMA KC_DOT   KC_SLASH  KC_RIGHT
+                            KC_LALT  KC_LGUI  LOWER   KC_SPC  KC_ENTER RAISE   KC_DOWN  KC_UP
+KC_PGUP   KC_UP     KC_HOME
+KC_RIGHT  KC_NO     KC_LEFT   CUT
+KC_PGDOWN KC_DOWN   KC_END    COPY
+          UNDO      PASTE
 KC_NO RGB_TOG BROWSER_ZOOMRESET PASTE
 )
 
 kbd.add_layer :lower, %i(
-KC_TILD  KC_EXLM   KC_AT    KC_HASH  KC_DLR   KC_PERC                           KC_CIRC      KC_AMPR   KC_ASTER KC_LCBR   KC_RCBR   KC_EQUAL
-KC_GRAVE KC_Q      KC_W     KC_E     KC_R     KC_T                              KC_Y         KC_U      KC_I     KC_O      KC_P      KC_BSLS
-KC_LCTL  SELECTALL KC_S     KC_D     KC_F     KC_G                              KC_LEFT      KC_DOWN   KC_UP    KC_RIGHT  KC_NO     KC_GRAVE
-KC_LSFT  UNDO      CUT      COPY     PASTE    KC_B        KC_PGUP    KC_B       KC_N         KC_END    KC_LABK  KC_RABK   KC_TILD   KC_RIGHT
-                            KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_LEFT    KANA_RAISE   KC_DOWN   KC_UP
-KC_PGUP   KC_UP     KC_HOME
-KC_RIGHT  KC_NO     KC_LEFT   KC_KP_PLUS
-KC_PGDOWN KC_DOWN   KC_END    KC_KP_MINUS
-          KC_DELETE KC_INS
+KC_TILD  KC_EXLM  KC_AT    KC_HASH  KC_DLR   KC_PERC                   KC_CIRC  KC_AMPR KC_ASTER KC_LCBR   KC_RCBR   KC_PLUS
+KC_TAB   KC_NO    KC_NO    KC_NO    KC_NO    KC_NO                     KC_NO    KC_NO   KC_NO    KC_NO     KC_NO     KC_EQUAL
+KC_LCTL  KC_NO    KC_NO    KC_NO    KC_F     KC_G                      KC_H     KC_J    KC_K     KC_L      KC_SCOLON KC_GRAVE
+KC_LSFT  UNDO     CUT      COPY     PASTE    KC_LANG2 KC_LABK KC_RABK  KC_LANG1 KC_NO   KC_NO    KC_DOT    KC_SLASH  KC_BSLS
+                           KC_LALT  KC_LGUI  LOWER    KC_SPC  KC_ENTER RAISE    KC_BRID KC_BRIU
+KC_KP_9  KC_KP_8   KC_KP_7
+KC_KP_6  KC_KP_5   KC_KP_4  KC_KP_PLUS
+KC_KP_3  KC_KP_2   KC_KP_1  KC_KP_MINUS
+         KC_KP_DOT KC_KP_0
 KC_NO KC_F5 KC_F6 KC_F7
 )
 
 kbd.add_layer :raise, %i(
-KC_F1    KC_F2    KC_F3     KC_F4    KC_F5    KC_F6                             KC_F7        KC_F8     KC_F9    KC_F10    KC_F11    KC_F12
-KC_TILD  KC_Q     KC_W      KC_E     KC_R     KC_T                              KC_Y         KC_U      KC_I     KC_O      KC_P      KC_PIPE
-KC_LCTL  KC_A     KC_S      KC_D     KC_F     KC_G                              KC_UNDS      KC_MINUS  KC_EQUAL KC_PLUS   KC_SCOLON KC_GRAVE
-KC_LSFT  BOOTSEL  CUT       COPY     PASTE    RGB_TOG     KC_LCBR    KC_RCBR    TEI          CHUU      KOU      KC_NO     KC_NO     KC_VOLU
-                            KC_LALT  KC_LGUI  EISU_LOWER  KC_SPC     KC_VOLD    KANA_RAISE   KC_BRID   KC_BRIU
+KC_GRAVE KC_F1    KC_F2    KC_F3    KC_F4    KC_F5                     KC_F6    KC_F7    KC_F8    KC_F9     KC_F10    KC_F11
+KC_TAB   KC_NO    KC_NO    KC_NO    KC_NO    KC_NO                     KC_NO    KC_NO    KC_NO    KC_NO     KC_NO     KC_F12
+KC_LCTL  KC_NO    KC_NO    KC_NO    KC_NO    KC_NO                     KC_LEFT  KC_DOWN  KC_UP    KC_RIGHT  KC_NO     KC_GRAVE
+KC_LSFT  BOOTSEL  KC_NO    KC_NO    KC_NO    KC_LANG2 KC_LCBR KC_RCBR  KC_LANG1 KC_NO    KC_NO    KC_DOT    KC_SLASH  KC_PIPE
+                           KC_LALT  KC_LGUI  LOWER    KC_SPC  KC_ENTER RAISE    KC_VOLD  KC_VOLU
 KC_9   KC_8   KC_7
 KC_6   KC_5   KC_4 KC_PLUS
 KC_3   KC_2   KC_1 KC_MINUS
@@ -59,8 +60,8 @@ KC_3   KC_2   KC_1 KC_MINUS
 KC_NO  KC_F8  KC_F9 KC_F10
 )
 
-kbd.define_composite_key :DESK_PREV, %i(KC_LCTL KC_LEFT)  # move to prev desktop
-kbd.define_composite_key :DESK_NEXT, %i(KC_LCTL KC_RIGHT) # move to next desktop
+kbd.define_composite_key :DESK_LEFT, %i(KC_LCTL KC_LEFT)  # move to left desktop
+kbd.define_composite_key :DESK_RIGHT, %i(KC_LCTL KC_RIGHT) # move to right desktop
 kbd.define_composite_key :BROWSER_ZOOMRESET, %i(KC_LGUI KC_0) # browser zoom reset
 kbd.define_composite_key :CUT, %i(KC_LGUI KC_X)
 kbd.define_composite_key :COPY, %i(KC_LGUI KC_C)
@@ -73,15 +74,21 @@ kbd.define_mode_key :CHUU, [ Proc.new { kbd.macro("chuu", []) }, nil, 200, nil]
 kbd.define_mode_key :KOU, [ Proc.new { kbd.macro("kou", []) }, nil, 200, nil]
 
 kbd.define_mode_key :LOWER,        [ nil,                       :lower,   nil, nil ]
-kbd.define_mode_key :RAISE,        [ nil,                       :raise,   nil, nil ]
-kbd.define_mode_key :SPC_LOWER,    [ :KC_SPC,                   :lower,   300, 300 ]
-kbd.define_mode_key :ENT_RAISE,    [ :KC_ENTER,                 :raise,   300, 300 ]
+kbd.define_mode_key :LANG2_LOWER,  [ :KC_LANG2,                 :lower,   300, 300 ]
 kbd.define_mode_key :EISU_LOWER,   [ :KC_LANG2,                 :lower,   300, 300 ]
+kbd.define_mode_key :SPC_LOWER,    [ :KC_SPC,                   :lower,   300, 300 ]
+
+kbd.define_mode_key :RAISE,        [ nil,                       :raise,   nil, nil ]
+kbd.define_mode_key :LANG1_RAISE,  [ :KC_LANG1,                 :raise,   300, 300 ]
 kbd.define_mode_key :KANA_RAISE,   [ :KC_LANG1,                 :raise,   300, 300 ]
+kbd.define_mode_key :ENT_RAISE,    [ :KC_ENTER,                 :raise,   300, 300 ]
 kbd.define_mode_key :RAISE_LEFT,   [ :KC_LEFT,                  :raise,   150, 150 ]
+
+kbd.define_mode_key :BSLS_RSFT,    [ :KC_BSLS,                  :KC_RSFT, 150, 150 ]
+
 kbd.define_mode_key :BOOTSEL,      [ Proc.new { kbd.bootsel! }, nil,      200, nil ]
-#                                 ^^^^^^^^^^^^^^^^^^^^  ^^^^^^^  ^^^  ^^^
-#                                     (1)                   (2)      (3)  (4)
+#                                    ^^^^^^^^^^^^^^^^^^^^       ^^^^^^^   ^^^  ^^^
+#                                          (1)                   (2)      (3)  (4)
 # (1): Symbol of a keycode, Array of multiple keycodes, or Proc which is going
 #      to be called when you tap.
 # (2): Symbol of a keycode (only a modifier), Symbol of a layer to be held, or
@@ -112,10 +119,10 @@ kbd.append encoder_2
 
 encoder_3 = RotaryEncoder.new(8, 9)
 encoder_3.counterclockwise do
-  kbd.send_key :KC_LEFT
+  kbd.send_key %i(KC_LCTL KC_LEFT)
 end
 encoder_3.clockwise do
-  kbd.send_key :KC_RIGHT
+  kbd.send_key %i(KC_LCTL KC_RIGHT)
 end
 kbd.append encoder_3
 
