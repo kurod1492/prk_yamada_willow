@@ -142,8 +142,13 @@ encoder_3.clockwise do
 end
 kbd.append encoder_3
 
-rgb = RGB.new(0, 101, 0)
+rgb = RGB.new(0, 99, 0, false)
 rgb.effect     = :swirl
+#rgb.effect     = :rainbow_mood
+#rgb.effect     = :breath
+#rgb.effect     = :nokogiri
+#rgb.effect     = :static
+#rgb.effect     = :ruby
 rgb.speed      = 22  # 1-31  / default: 22
 rgb.hue        = 0  # 0-100 / default: 0
 rgb.saturation = 100 # 0-100 / default: 100
