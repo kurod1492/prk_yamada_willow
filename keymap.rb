@@ -82,29 +82,25 @@ kbd.define_composite_key :PASTE, %i(KC_LGUI KC_V)
 kbd.define_composite_key :UNDO, %i(KC_LGUI KC_Z)
 kbd.define_composite_key :SELECTALL, %i(KC_LGUI KC_A)
 
-kbd.define_mode_key :TEI, [ Proc.new { kbd.macro("tei", []) }, nil, 200, nil]
-kbd.define_mode_key :CHUU, [ Proc.new { kbd.macro("chuu", []) }, nil, 200, nil]
-kbd.define_mode_key :KOU, [ Proc.new { kbd.macro("kou", []) }, nil, 200, nil]
+kbd.define_mode_key :LOWER,        [ nil,                                 :lower,   nil, nil ]
+kbd.define_mode_key :LANG2_LOWER,  [ :KC_LANG2,                           :lower,   300, 300 ]
+kbd.define_mode_key :EISU_LOWER,   [ :KC_LANG2,                           :lower,   300, 300 ]
+kbd.define_mode_key :SPC_LOWER,    [ :KC_SPC,                             :lower,   300, 300 ]
+kbd.define_mode_key :RAISE,        [ nil,                                 :raise,   nil, nil ]
+kbd.define_mode_key :LANG1_RAISE,  [ :KC_LANG1,                           :raise,   300, 300 ]
+kbd.define_mode_key :KANA_RAISE,   [ :KC_LANG1,                           :raise,   300, 300 ]
+kbd.define_mode_key :ENT_RAISE,    [ :KC_ENTER,                           :raise,   300, 300 ]
+kbd.define_mode_key :RAISE_LEFT,   [ :KC_LEFT,                            :raise,   150, 150 ]
+kbd.define_mode_key :BSLS_RSFT,    [ :KC_BSLS,                            :KC_RSFT, 150, 150 ]
+kbd.define_mode_key :ADJUST,       [ Proc.new { kbd.lock_layer :adjust }, :KC_LSFT, 300, nil ]
+kbd.define_mode_key :UNLOCK,       [ Proc.new { kbd.unlock_layer },       :KC_LSFT, 300, nil ]
+kbd.define_mode_key :TEI,          [ Proc.new { kbd.macro("tei", []) },   nil,      200, nil ]
+kbd.define_mode_key :CHUU,         [ Proc.new { kbd.macro("chuu", []) },  nil,      200, nil ]
+kbd.define_mode_key :KOU,          [ Proc.new { kbd.macro("kou", []) },   nil,      200, nil ]
 
-kbd.define_mode_key :LOWER,        [ nil,                       :lower,   nil, nil ]
-kbd.define_mode_key :LANG2_LOWER,  [ :KC_LANG2,                 :lower,   300, 300 ]
-kbd.define_mode_key :EISU_LOWER,   [ :KC_LANG2,                 :lower,   300, 300 ]
-kbd.define_mode_key :SPC_LOWER,    [ :KC_SPC,                   :lower,   300, 300 ]
-
-kbd.define_mode_key :RAISE,        [ nil,                       :raise,   nil, nil ]
-kbd.define_mode_key :LANG1_RAISE,  [ :KC_LANG1,                 :raise,   300, 300 ]
-kbd.define_mode_key :KANA_RAISE,   [ :KC_LANG1,                 :raise,   300, 300 ]
-kbd.define_mode_key :ENT_RAISE,    [ :KC_ENTER,                 :raise,   300, 300 ]
-kbd.define_mode_key :RAISE_LEFT,   [ :KC_LEFT,                  :raise,   150, 150 ]
-
-kbd.define_mode_key :BSLS_RSFT,    [ :KC_BSLS,                  :KC_RSFT, 150, 150 ]
-
-kbd.define_mode_key :ADJUST,    [ Proc.new { kbd.lock_layer :adjust }, :KC_LSFT,                   300,             nil ]
-kbd.define_mode_key :UNLOCK,    [ Proc.new { kbd.unlock_layer },       :KC_LSFT,                   300,             nil ]
-
-kbd.define_mode_key :BOOTSEL,      [ Proc.new { kbd.bootsel! }, nil,      200, nil ]
-#                                    ^^^^^^^^^^^^^^^^^^^^       ^^^^^^^   ^^^  ^^^
-#                                          (1)                   (2)      (3)  (4)
+kbd.define_mode_key :BOOTSEL,      [ Proc.new { kbd.bootsel! },           nil,      200, nil ]
+#                                    ^^^^^^^^^^^^^^^^^^^^                 ^^^^^^^   ^^^  ^^^
+#                                          (1)                             (2)      (3)  (4)
 # (1): Symbol of a keycode, Array of multiple keycodes, or Proc which is going
 #      to be called when you tap.
 # (2): Symbol of a keycode (only a modifier), Symbol of a layer to be held, or
