@@ -35,11 +35,11 @@ KC_NO    RGB_TOG   ZOOM_RESET KC_NO
 )
 
 kbd.add_layer :lower, %i(
-KC_GRAVE KC_F1     KC_F2    KC_F3    KC_F4    KC_F5                     KC_F6    KC_F7    KC_F8    KC_F9    KC_F10    KC_DELETE
-KC_TAB   KC_F11    KC_F12   KC_NO    KC_NO    KC_NO                     KC_PLUS  KC_EQUAL KC_PLUS  KC_LCBR  KC_RCBR   KC_PIPE
-KC_LCTL  SELECTALL KC_NO    KC_NO    KC_F     KC_G                      KC_LEFT  KC_DOWN  KC_UP    KC_RIGHT KC_SCOLON KC_TILD
-KC_LSFT  UNDO      CUT      COPY     PASTE    KC_LANG2 KC_LBRC KC_RBRC  KC_LANG1 KC_NO    KC_NO    KC_DOT   KC_BSLS   KC_PLUS
-                            KC_LALT  KC_LGUI  LOWER    KC_NO   KC_NO    ADJUST   KC_BRID  KC_BRIU
+KC_GRAVE KC_F1     KC_F2    KC_F3    KC_F4    KC_F5                      KC_F6    KC_F7    KC_F8    KC_F9    KC_F10    KC_DELETE
+KC_TAB   KC_F11    KC_F12   KC_NO    KC_NO    KC_NO                      KC_MINUS KC_PLUS  KC_UNDS  KC_EQUAL KC_NO     KC_PIPE
+KC_LCTL  SELECTALL KC_NO    KC_NO    KC_F     KC_G                       KC_LEFT  KC_DOWN  KC_UP    KC_RIGHT KC_SCOLON KC_TILD
+KC_LSFT  UNDO      CUT      COPY     PASTE    KC_LANG2 KC_LBRC  KC_RBRC  KC_LANG1 KC_NO    KC_NO    KC_DOT   KC_BSLS   KC_PLUS
+                            KC_LALT  KC_LGUI  LOWER    KC_NO    KC_NO    ADJUST   KC_BRID  KC_BRIU
 KC_PGUP   KC_UP    KC_HOME
 KC_RIGHT  KC_NO    KC_LEFT   CUT
 KC_PGDOWN KC_DOWN  KC_END    COPY
@@ -48,11 +48,11 @@ KC_NO    KC_F5     KC_F6    KC_NO
 )
 
 kbd.add_layer :raise, %i(
-KC_TILD  KC_EXLM   KC_AT    KC_HASH  KC_DLR   KC_PERC                    KC_CIRC  KC_AMPR KC_ASTER KC_LBRC  KC_RBRC   KC_EQUAL
-KC_TAB   KC_NO     KC_NO    KC_NO    KC_NO    KC_NO                      KC_MINUS KC_PLUS KC_UNDS  KC_EQUAL KC_NO     KC_BSLS
-KC_LCTL  KC_NO     KC_NO    KC_NO    KC_NO    KC_NO                      KC_LEFT  KC_DOWN KC_UP    KC_RIGHT KC_NO     KC_GRAVE
-KC_LSFT  KC_NO     KC_NO    KC_NO    KC_NO    KC_LANG2 KC_LCBR  KC_RCBR  KC_LANG1 KC_NO   KC_NO    KC_NO    KC_BSLS   KC_PLUS
-                            KC_LALT  KC_LGUI  ADJUST   KC_NO    KC_NO    RAISE    KC_VOLD KC_VOLU
+KC_TILD  KC_EXLM   KC_AT    KC_HASH  KC_DLR   KC_PERC                    KC_CIRC  KC_AMPR  KC_ASTER KC_LBRC  KC_RBRC   KC_EQUAL
+KC_TAB   KC_NO     KC_NO    KC_NO    KC_NO    KC_NO                      KC_MINUS KC_PLUS  KC_UNDS  KC_EQUAL KC_NO     KC_BSLS
+KC_LCTL  KC_NO     KC_NO    KC_NO    KC_NO    KC_NO                      KC_LEFT  KC_DOWN  KC_UP    KC_RIGHT KC_NO     KC_GRAVE
+KC_LSFT  KC_NO     KC_NO    KC_NO    KC_NO    KC_LANG2 KC_LCBR  KC_RCBR  KC_LANG1 KC_NO    KC_NO    KC_NO    KC_BSLS   KC_PLUS
+                            KC_LALT  KC_LGUI  ADJUST   KC_NO    KC_NO    RAISE    KC_VOLD  KC_VOLU
 KC_9   KC_8   KC_7
 KC_6   KC_5   KC_4 KC_PLUS
 KC_3   KC_2   KC_1 KC_MINUS
